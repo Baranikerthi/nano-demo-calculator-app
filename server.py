@@ -11,13 +11,13 @@ app = Flask(__name__)
 
 def greeting():
     '''function to add'''
-    return "Hello world"
+    return jsonify("Hello world"),200
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
     num = request.json
     first = num['first']
-    second = num['second']
+    second = num['second'] 
     return jsonify({'result': first+second}), 200
 
 @app.route("/calculator/subtract", methods=['POST'])
